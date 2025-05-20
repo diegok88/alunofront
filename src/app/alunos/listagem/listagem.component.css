@@ -1,0 +1,10 @@
+.table td, .table th {
+    white-space: nowrap;
+}
+.table td:nth-child(3), 
+.table td:nth-child(6) {
+    white-space: normal;
+    min-width: 200px;
+    max-width: 300px;
+    word-wrap: break-word;
+}

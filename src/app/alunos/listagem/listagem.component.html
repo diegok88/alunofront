@@ -1,0 +1,39 @@
+<div class="container-fluid p-3">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="mb-0">Lista de Alunos</h1>
+        <button type="button" class="btn btn-outline-primary d-flex align-items-center gap-2" routerLink="/cadastro">
+            <i class="bi bi-plus fs-3"></i> Cadastrar
+        </button>
+    </div>
+    
+    <div class="table-responsive" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+        <table class="table table-hover" style="min-width: max-content; width: 100%;">
+            <thead class="table-light">
+                <tr>
+                    <th scope="col" style="min-width: 80px;">Código</th>
+                    <th scope="col" style="min-width: 150px;">Nome</th>
+                    <th scope="col" style="min-width: 200px;">Email</th>
+                    <th scope="col" style="min-width: 80px;">Idade</th>
+                    <th scope="col" style="min-width: 100px;">Serie</th>
+                    <th scope="col" style="min-width: 250px;">Endereço</th>
+                    <th scope="col" style="min-width: 120px;">Edição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let aluno of alunos">
+                    <td scope="row">{{ aluno.id }}</td>
+                    <td class="text-nowrap">{{ aluno.nome }}</td>
+                    <td>{{ aluno.email }}</td>
+                    <td>{{ aluno.idade }}</td>
+                    <td>{{ aluno.serie }}</td>
+                    <td>{{ aluno.endereco }}</td>
+                    <td>
+                        <button type="button" class="btn btn-outline-primary d-flex align-items-center gap-2" [routerLink]="['/edicao', aluno.id]">
+                            <i class="bi bi-pencil fs-5"></i> Editar
+                        </button>
+                    </td>
+                </tr> 
+            </tbody>
+        </table>
+    </div>
+</div>
