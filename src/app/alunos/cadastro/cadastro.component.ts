@@ -22,13 +22,13 @@ export class CadastroComponent {
     endereco: '',
   };
 
-  constructor(private alunoService: AlunosService, private router: Router) {}
+  constructor(private alunoService: AlunosService, private router: Router) { }
 
-  salvar(){
-    this.alunoService.cadastrarAlunos(this.aluno).subscribe((res) => {this.router.navigate(['/listagem'])});
+  salvar() {
+    this.alunoService.cadastrarAlunos(this.aluno).subscribe((res) => { this.router.navigate(['/listagem']) });
   }
 
   cancelar(): void {
-  this.router.navigate(['/listagem'])
+    this.router.navigate(['/listagem'])
   }
 }

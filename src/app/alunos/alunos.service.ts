@@ -9,7 +9,7 @@ import { Aluno } from './aluno.model';
 export class AlunosService {
   private apiURL = 'http://localhost:3000/aluno';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   listarAlunos(): Observable<Aluno[]> {
     return this.http.get<Aluno[]>(this.apiURL);

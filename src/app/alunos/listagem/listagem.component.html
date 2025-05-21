@@ -5,7 +5,7 @@
             <i class="bi bi-plus fs-3"></i> Cadastrar
         </button>
     </div>
-    
+
     <div class="table-responsive" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
         <table class="table table-hover" style="min-width: max-content; width: 100%;">
             <thead class="table-light">
@@ -28,11 +28,12 @@
                     <td>{{ aluno.serie }}</td>
                     <td>{{ aluno.endereco }}</td>
                     <td>
-                        <button type="button" class="btn btn-outline-primary d-flex align-items-center gap-2" [routerLink]="['/edicao', aluno.id]">
+                        <button type="button" class="btn btn-outline-primary d-flex align-items-center gap-2"
+                            [routerLink]="['/edicao', aluno.id]">
                             <i class="bi bi-pencil fs-5"></i> Editar
                         </button>
                     </td>
-                </tr> 
+                </tr>
             </tbody>
         </table>
     </div>

@@ -11,7 +11,7 @@ import { Aluno } from '../aluno.model';
   templateUrl: './edicao.component.html',
   styleUrl: './edicao.component.css'
 })
-export class EdicaoComponent implements OnInit{
+export class EdicaoComponent implements OnInit {
 
   aluno: Aluno = {
     nome: '',
@@ -23,10 +23,10 @@ export class EdicaoComponent implements OnInit{
   private id!: string;
 
   constructor(
-    private alunoService: AlunosService, 
+    private alunoService: AlunosService,
     private router: Router,
     private route: ActivatedRoute
-  ){}
+  ) { }
 
   ngOnInit(): void {
     //this.id = Number(this.route.snapshot.paramMap.get('id'));
@@ -34,22 +34,22 @@ export class EdicaoComponent implements OnInit{
     this.carregarAluno();
   }
 
-carregarAluno(): void {
-  if(!this.id){
-    this.router.navigate(['/listagem']);
-    return;
+  carregarAluno(): void {
+    if (!this.id) {
+      this.router.navigate(['/listagem']);
+      return;
+    }
+    this.alunoService.buscarAlunos(this.id).subscribe((a) => {
+      this.aluno = a;
+    })
   }
-  this.alunoService.buscarAlunos(this.id).subscribe((a) => {
-    this.aluno = a;
-})
-}
-salvar(): void {
-  if(!this.aluno) return;
-  this.alunoService.atualizarAlunos(this.id, this.aluno).subscribe(() => {
-    this.router.navigate(['/listagem']);
-  })
-}
-cancelar(): void {
-  this.router.navigate(['/listagem'])
-}
+  salvar(): void {
+    if (!this.aluno) return;
+    this.alunoService.atualizarAlunos(this.id, this.aluno).subscribe(() => {
+      this.router.navigate(['/listagem']);
+    })
+  }
+  cancelar(): void {
+    this.router.navigate(['/listagem'])
+  }
 }

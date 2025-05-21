@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlunosService } from '../alunos.service';
-import { Aluno} from '../aluno.model';
+import { Aluno } from '../aluno.model';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
@@ -11,10 +11,10 @@ import { RouterLink } from '@angular/router';
   styleUrl: './listagem.component.css'
 })
 export class ListagemComponent implements OnInit {
-  
+
   alunos: Aluno[] = [];
 
-  constructor(private alunoService: AlunosService){}
+  constructor(private alunoService: AlunosService) { }
 
   ngOnInit(): void {
     this.carregarAlunos();
